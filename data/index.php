@@ -45,7 +45,6 @@ if(isset($_REQUEST['code'])){
         'client_secret'   => 'XXXXXXXXXXXXXXXXXXXXXXXXXX',
     ];
 
-    $tenant = "44376307-b429-42ad-8c25-28cd496f4772";
     $response = httpPost("https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token", $requestData);
 
 //echo($response);
@@ -94,7 +93,7 @@ if(isset($_REQUEST['code'])){
 
 //var_dump($response);
 
-    $meObject = json_decode($response);.
+    $meObject = json_decode($response);
 
     echo "<br><br>employeeId: ".$meObject->employeeId;
 
