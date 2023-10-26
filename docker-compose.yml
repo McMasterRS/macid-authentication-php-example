@@ -1,0 +1,26 @@
+version: "3"
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    ports:
+      - "808X:8080"
+    networks:
+      - internal
+    volumes:
+      - /etc/ssl/rsd-dev-passphrase:/etc/ssl/rsd-dev-passphrase
+      - /etc/ssl/certs/rsd-dev_mcmaster_ca.cer:/etc/ssl/certs/rsd-dev_mcmaster_ca.cer
+      - /etc/ssl/private/rsd-dev_mcmaster_ca-server.key:/etc/ssl/private/rsd-dev_mcmaster_ca-server.key
+      - ./data/:/var/www/html
+      - /logs/nginx:/var/log/nginx/
+  php:
+    image: php:fpm-alpine
+    networks:
+      - internal
+    volumes:
+      - ./data/:/var/www/html
+      - /logs/php.log:/var/log/fpm-php.www.log
+networks:
+  internal:
+    driver: bridge

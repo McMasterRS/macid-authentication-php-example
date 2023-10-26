@@ -1,0 +1,24 @@
+version: "3"
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx/production/Dockerfile
+    ports:
+      - "443:443"
+      - "808X:808X"
+    networks:
+      - internal
+    volumes:
+      - /etc/ssl/rsd-dev-passphrase:/etc/ssl/rsd-dev-passphrase
+      - /etc/ssl/certs/rsd-dev_mcmaster_ca.cer:/etc/ssl/certs/rsd-dev_mcmaster_ca.cer
+      - /etc/ssl/private/rsd-dev_mcmaster_ca-server.key:/etc/ssl/private/rsd-dev_mcmaster_ca-server.key
+  php:
+    build:
+      context: .
+      dockerfile: php/Dockerfile
+    networks:
+      - internal
+networks:
+  internal:
+    driver: bridge
