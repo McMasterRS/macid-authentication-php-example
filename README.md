@@ -18,5 +18,5 @@ Before building the container, open the `data/index.php` file and fill out the t
 
 To build and run the container, simply run:  
 ```bash
-docker-compose -p $USERNAME-container up --build
+docker-compose -p $USERNAME-container --file docker-compose.yml up --build
 ```
