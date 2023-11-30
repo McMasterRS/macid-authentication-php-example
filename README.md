@@ -17,3 +17,11 @@ To build and run the container, simply run:
 ```bash
 docker-compose -p $USERNAME-container --env-file config/.env --file docker-compose.yaml up --build
 ```
+
+## Questions & Contribution
+
+Pull requests are always welcome. If you need help questions, you may send an email to:  
+- [Research Software Development Team](mailto:rsd@mcmaster.ca)
+- [Digital Research Commons Pilot (DRCP)](mailto:askresearch@mcmaster.ca)
+
+You might also reach out to [Information Security for Researchers (IS4R)](https://informationsecurity.mcmaster.ca/people/researchers/) or refer to their [SSO guideline](https://informationsecurity.mcmaster.ca/macid-authentication-options-at-mcmaster-university/).  
