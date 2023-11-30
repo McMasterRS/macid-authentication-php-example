@@ -1,4 +1,4 @@
-# php-sso-example
+# macid-authentication-php-example
 
 A sample project that shows developers how they can add Single Sign-On (SSO) to their PHP web application to allow users to sign using their MacID credentials.
 
