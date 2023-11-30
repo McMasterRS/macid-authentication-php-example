@@ -38,11 +38,11 @@ if(isset($_REQUEST['code'])){
     $code = $_REQUEST['code'];
 
     $requestData  = [
-        'client_id' => 'XXXXXXXXXXXXXXXXXXXXXXXXXX',
+        'client_id' => getenv('MAC_AZURE_CLIENT_ID'),
         'code' => $code,
         'grant_type' => 'authorization_code',
         'scope' => 'User.Read',
-        'client_secret'   => 'XXXXXXXXXXXXXXXXXXXXXXXXXX',
+        'client_secret' => getenv('MAC_AZURE_CLIENT_SECRET'),
     ];
 
     $response = httpPost("https://login.microsoftonline.com/{tenant}/oauth2/v2.0/token", $requestData);
@@ -99,13 +99,12 @@ if(isset($_REQUEST['code'])){
 
 
 } else {
-    ?>
 
-    <br>
-    <a type="button" href="https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?client_id={client_id}&response_type=code&response_mode=query&scope=https%3A%2F%2Fgraph.microsoft.com%2FUser.Read">MACID Login</a>
+    echo "<br>";
+    $auth_url = "https://login.microsoftonline.com/" . getenv('MAC_AZURE_TENANT_ID') . "/oauth2/v2.0/authorize?client_id=" . getenv('MAC_AZURE_CLIENT_ID') . "&response_type=code&response_mode=query&scope=https%3A%2F%2Fgraph.microsoft.com%2FUser.Read";
+    echo "<a type='button' href='" . $auth_url . "'>MACID Login</a>";
 
 
 
-    <?php
 }
 ?>

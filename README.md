@@ -1,4 +1,5 @@
 # php-sso-example
+
 A sample project that shows developers how they can add Single Sign-On (SSO) to their PHP web application to allow users to sign using their MacID credentials.
 
 ## Build
@@ -10,13 +11,9 @@ A sample project that shows developers how they can add Single Sign-On (SSO) to 
 
 ### Usage
 
-Before building the container, open the `data/index.php` file and fill out the the following values:
-- `client_id` in `$requestData`
-- `client_secret` in `$requestData`
-- `{tenant}` in all strings where it appears
-- `{client_ind}` in all strings where it appears
+Before building the container, duplicate the `config/.env.sample` file to a new file named `config/.env`. Fill out all the information required in the `config/.env` file.  
 
 To build and run the container, simply run:  
 ```bash
-docker-compose -p $USERNAME-container --file docker-compose.yml up --build
+docker-compose -p $USERNAME-container --env-file config/.env --file docker-compose.yaml up --build
 ```

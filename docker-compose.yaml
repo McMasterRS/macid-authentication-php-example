@@ -5,7 +5,10 @@ services:
       context: .
       dockerfile: nginx/Dockerfile
     ports:
-      - "808X:8080"
+      - "443:443"
+      - "${HOST_PORT}:${HOST_PORT}"
+    environment:
+      - HOST_PORT=${HOST_PORT}
     networks:
       - internal
     volumes:
@@ -21,6 +24,10 @@ services:
     volumes:
       - ./data/:/var/www/html
       - /logs/php.log:/var/log/fpm-php.www.log
+    environment:
+      - MAC_AZURE_CLIENT_ID=${MAC_AZURE_CLIENT_ID}
+      - MAC_AZURE_CLIENT_SECRET=${MAC_AZURE_CLIENT_SECRET}
+      - MAC_AZURE_TENANT_ID=${MAC_AZURE_TENANT_ID}
 networks:
   internal:
     driver: bridge
