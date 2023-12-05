@@ -18,10 +18,13 @@ To build and run the container, simply run:
 docker-compose -p $USERNAME-container --env-file config/.env --file docker-compose.yaml up --build
 ```
 
-## Questions & Contribution
+## Support Guide
 
-Pull requests are always welcome. If you need help with any questions, you may send an email to:  
-- [Research Software Development Team](mailto:rsd@mcmaster.ca)
-- [Digital Research Commons Pilot (DRCP)](mailto:askresearch@mcmaster.ca)
+This project is created and maintained by the McMaster University Research Software Development Team.  
 
-You may also want to reach out to [Information Security for Researchers (IS4R)](https://informationsecurity.mcmaster.ca/people/researchers/) or refer to their [SSO guideline](https://informationsecurity.mcmaster.ca/macid-authentication-options-at-mcmaster-university/).  
+Please review the following documents to find out how you may contribute or get support.  
+- [Support and Help](https://github.com/McMasterRS/.github/blob/main/SUPPORT.md)
+- [Contributing Guidelines](https://github.com/McMasterRS/.github/blob/main/CONTRIBUTING.md)
+- [Security Policy](https://github.com/McMasterRS/.github/blob/main/SECURITY.md)
+
+You might also want to reach out to [Information Security for Researchers (IS4R)](https://informationsecurity.mcmaster.ca/people/researchers/) or refer to their [SSO guideline](https://informationsecurity.mcmaster.ca/macid-authentication-options-at-mcmaster-university/).  
